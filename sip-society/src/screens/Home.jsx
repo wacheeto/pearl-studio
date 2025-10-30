@@ -1,22 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ConveyorBanner from '../components/ConveyorBanner.jsx'
 import ButtonXs from '../components/ButtonXs.jsx'
 import Card from '../components/Card.jsx'
 import Footer from '../components/Footer.jsx'
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export default function Home() {
+  useEffect(() => {
+    AOS.init(
+      { 
+        duration: 900, 
+        once: true,
+        disable:'mobile' 
+      }
+    );
+  }, []);
   return (
     <div className="flex flex-col bg-white text-black w-screen items-center">
       {/* hero dito */}
-      <section className="w-full h-screen md:h-[95vh] bg-[url('/assets/hero-img.jpg')] bg-cover bg-center flex flex-col justify-end px-6 md:px-12 pb-16">
+      <section data-aos="fade-up" className="w-full h-screen md:h-[95vh] bg-[url('/assets/hero-img.jpg')] bg-cover bg-center flex flex-col justify-end px-6 md:px-12 pb-16">
         <h1 className="text-7xl md:text-9xl font-bold text-white text-shadow-lg">
           Pearl Studio.
         </h1>
       </section>
-      <div className="w-screen">
+      <div className="w-screen" data-aos="fade-up">
         <ConveyorBanner/>
       </div>
-      <section className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-8 py-20 px-6">
+      <section data-aos="fade-up" className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-8 py-20 px-6">
         <div className="flex-1">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
             Your Smile, Our Passion
@@ -37,7 +47,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="bg-gray-50 py-10 flex flex-col" id='services'>
+      <section data-aos="fade-up" className="bg-gray-50 py-10 flex flex-col w-screen items-center" id='services'>
         <p className='text-center font-bold text-3xl md:text-4xl text-gray-800 mb-5'>What we offer</p>
         <div className="container  flex flex-wrap justify-center gap-6 ">
           <Card title="Whitening" body="Brighten your smile with our safe and effective whitening treatments designed to gently lift stains and restore your teeth’s natural brilliance" btn="Book here" link="/assets/whitening.webp" />
@@ -48,7 +58,7 @@ export default function Home() {
           <Card title="Pediatric Care" body="Our pediatric services make dental visits a positive experience for children. We focus on building trust early, teaching good habits, and keeping little smiles bright, healthy, and full of confidence." btn="Book here" link="/assets/hero-img.jpg" />
         </div>
       </section>
-      <section className='flex flex-col items-center py-20  px-6' id='contact'>
+      <section data-aos="fade-up" className='flex flex-col items-center py-20  px-6' id='contact'>
         <h2 className="text-4xl md:text-5xl font-bold text-center  text-gray-800 ">
           We're open for all and everyone
         </h2>
@@ -100,7 +110,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="container space-y-4 px-4 items-center flex justify-center flex-col md:px-6 py-10">
+      <div data-aos="fade-up" className="container space-y-4 px-4 items-center flex justify-center flex-col md:px-6 py-10">
         <span className='mt-8 text-md  md:text-xl text-center w-[70%] text-gray-800 mb-5  '>
           Whether you’re ready to book your first visit or just want more information, our team is only a message away.
         </span>
@@ -171,7 +181,7 @@ export default function Home() {
       <div className="w-screen mt-1">
         <ConveyorBanner/>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

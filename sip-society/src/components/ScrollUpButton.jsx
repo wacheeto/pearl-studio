@@ -25,7 +25,7 @@ export default function ScrollUpButton() {
         className="fixed bottom-6 right-6 bg-zinc-900 text-white p-3 rounded-md w-[50px] shadow-lg hover:bg-zinc-800 transition-all z-10"
         aria-label="Scroll to top"
       >
-        <i class="fa-solid fa-caret-up"></i>
+        <i className="fa fa-solid fa-caret-up"></i>
       </button>
     )
   );
